@@ -1,0 +1,13 @@
+<!--pages/bilibili/fenqu.wxml-->
+<view class="box">
+
+   <view class="box-1" >
+
+      <view class="box-2" wx:key="" data-index="{{index}}" wx:for='{{channelname}}' wx:for-item='item' bindtap='stroe'>
+      <image src="{{item.icon}}"></image>
+      <text>{{item.name}}</text>
+      </view>
+
+ 
+   </view>
+</view>

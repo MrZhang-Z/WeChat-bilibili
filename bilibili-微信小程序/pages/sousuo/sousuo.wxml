@@ -1,0 +1,54 @@
+<!--pages/search/search.wxml-->
+
+<!--搜索栏-->
+<view class="itemview">
+	<view class="search">
+		<view class="df search_arr"  >
+			<icon bindtap="xshow" class="searchcion" size='20' type='search'></icon>
+			<input name="value1" class="ph-text" auto-focus value="{{searchValue}}" bindblur="sqshow" bindinput="showtext" bindconfirm="show" placeholder="请输入" />
+			<view hidden="{{hiddenName}}" class="showtext">
+				<view wx:for="{{list}}">
+					<text bindtap="click" data-text="{{item.title}}" data-id="{{item.id}}">{{item.title}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="quxiao" bindtap="bank">取消</view>
+
+</view>
+
+
+<!-- 分割线 -->
+<view class="container">
+	<view class="divLine"></view>
+</view>
+<view class="alsearch">
+	<view class="lj">
+		<view class="title">搜索历史</view>
+	</view>
+	<view class="tuijian" wx:for="{{historyinfo}}">
+		<label bindtap="click" data-text="{{item}}"  id="{{vid[index]}}">{{item}}</label>
+	</view>
+	<view class="delect">	<image src="../../images/清空.png"bindtap="alldelete" class="del"/></view>
+
+	<view class="ren_m">
+		<text>热门搜索</text>
+		<view class="r_m">
+			<view wx:for="{{ren_men}}" class="r_box">
+				<view bindtap="click" data-text="{{item}}" id="{{vid[index]}}">{{item}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="sery">
+	<view class="Line"> <text>热门视频</text></view>
+	<view wx:for="{{rquestinfo}}" wx:key="index" class="content" bindtap="enter" data-type="{{item.videoLabel}}" data-title="{{item.videoTitle}}" data-id="{{item.videoId}}" class="box">
+		<image src="{{item.videoPic}}"></image>
+		<view class="content">
+			<text class="type">{{item.videoLabel}}</text> <label>点击量--{{item.videoPlayNum}}</label>
+			<text>题目：{{item.videoTitle}}</text>
+			<text class="brif">时间：{{item.videoUploadDate}}</text>
+		</view>
+	</view>
+
+</view>

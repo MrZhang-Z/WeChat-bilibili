@@ -1,0 +1,88 @@
+ <view class="userinfo">
+ 	<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+ 	<block wx:else>
+ 		<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+ 		<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+ 	</block>
+ </view>
+ <view class="header-nav1">
+ 	<view class="nav1-dong">
+ 		<text>0</text>
+ 		<view></view>
+ 		<text class="nav1-text">动态</text>
+ 	</view>
+ 	<view class="nav1-dong">
+ 		<text>0</text>
+ 		<view></view>
+ 		<text class="nav1-text">关注</text>
+ 	</view>
+ 	<view class="nav1-dong1">
+ 		<text>3</text>
+ 		<view></view>
+ 		<text class="nav1-text">粉丝</text>
+ 	</view>
+ </view>
+
+ <view class="nav-brief">
+ 	<text>这个人很神秘，什么都没有写</text>
+ 	
+ </view>
+
+ <view class='swiper-tab'>
+ 	<view class="swiper-tab-item {{currentTab == 0 ? 'active': ''}}" data-current='0' bindtap='clickTab'>主页</view>
+ 	<view class="swiper-tab-item {{currentTab == 1 ? 'active': ''}}" data-current='1' bindtap='clickTab'>动态</view>
+ 	<view class="swiper-tab-item {{currentTab == 2 ? 'active': ''}}" data-current='2' bindtap='clickTab'>投稿</view>
+ 	<view class="swiper-tab-item {{currentTab == 3 ? 'active': ''}}" data-current='3' bindtap='clickTab'>收藏</view>
+ 	<view class="swiper-tab-item {{currentTab == 4 ? 'active': ''}}" data-current='4' bindtap='clickTab'>追番</view>
+ </view>
+
+ <swiper duration="300" current="{{currentTab}}" bindchange='swiperTab'>
+ 	<swiper-item>
+ 		<view class="home-photo">
+ 			<view class="phote-nav">
+ 				<text>相簿</text>
+ 			</view>
+ 			<view class="phote">
+ 				<image src="../../images/game_1.jpg"></image>
+ 				<image src="../../images/game_10.jpg"></image>
+ 				<image src="../../images/game_11.jpg"></image>
+ 				<image src="../../images/game_10.jpg"></image>
+ 				<image src="../../images/game_11.jpg"></image>
+ 				<image src="../../images/game_1.jpg"></image>
+ 			</view>
+ 		</view>
+ 	</swiper-item>
+
+ 	<swiper-item>
+ 		<view class="dongtai">
+ 			<view class="dongtai-infor">
+ 				<image src="../../images/bili_default_image_tv.9.png"></image>
+         <text class="infor">bilibili用户24234343</text>
+ 				<text>我已成为哔哩哔哩第23142323433位转正会员，挑战转正答题考试获得0分，获得“迷影者”挂件，有效期7天。</text>
+ 			</view>
+       <view class="dongtai-infot">
+       <image src="../../images/ic_movie_pay_order_error.png"></image>
+       </view>
+ 		</view>
+ 	</swiper-item>
+
+ 	<swiper-item>
+ 	<view class="dongtai">
+ 			<view class="dongtai-infor">
+ 				
+ 				<text>我已成为哔哩哔哩第23142323433位转正会员，挑战转正答题考试获得0分，获得“迷影者”挂件，有效期7天。</text>
+ 			</view>
+       <view class="dongtai-infot">
+       <image src="../../images/ic_movie_pay_order_error.png"></image>
+       </view>
+ 		</view>
+ 	</swiper-item>
+
+ 	<swiper-item>
+ 		<view></view>
+ 	</swiper-item>
+ 	<swiper-item>
+	 
+ 		<view></view>
+ 	</swiper-item>
+ </swiper>

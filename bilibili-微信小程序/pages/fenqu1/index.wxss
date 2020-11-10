@@ -1,0 +1,123 @@
+page {
+  height: 100%;
+}
+
+.swiper-tab {
+  width: 100%;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  box-shadow: 2px 2px 5px #b0b0b0;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
+swiper {
+  padding-top: 88rpx;
+  font-weight: bold;
+  font-size: 45rpx;
+}
+
+.swiper-tab-item {
+  width: 20%;
+  color: #434343;
+}
+
+.active {
+  color: hsl(350, 93%, 73%);
+  border-bottom: 8rpx solid hsl(350, 93%, 73%);
+}
+
+/* swiper {
+  height: 100%;
+  font-weight: bold;
+  font-size: 45rpx;
+} */
+
+swiper-item {
+  overflow: scroll;
+  height: 140rpx;
+  padding-top: 5rpx;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  padding: 15rpx;
+  height: 140rpx;
+  border-top: 1rpx solid #e4e4e4ad;
+}
+
+.image {
+  width: 35%;
+  height: 100%;
+  border-radius: 5px 5px 5px 5px;
+  background-color: white;
+  margin-left: 20rpx;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 20rpx;
+  font-family: 仿宋;
+  font-weight: 300;
+}
+
+.title {
+  height: 60%;
+  width: 100%;
+  color: black;
+  font-size: 26rpx;
+}
+
+.up {
+  display: flex;
+  margin-left: 10rpx;
+  width: 100px;
+  height: 15px;
+  color: #aaa;
+  align-items: center;
+  margin-top: 2rpx;
+}
+
+.up image {
+  width: 15px;
+  height: 11px;
+}
+
+.up text {
+  padding-left: 10rpx;
+  font-size: 20rpx;
+}
+
+.pinglun {
+  display: flex;
+}
+.time{
+
+  width: 50rpx;
+  height: 28rpx;  
+  font-size: 18rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 170rpx;
+  margin-top:110rpx;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.521);
+  border-radius: 5rpx 5rpx 5rpx 5rpx;
+}

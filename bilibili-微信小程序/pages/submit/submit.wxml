@@ -1,0 +1,40 @@
+<view class="sub1">{{txt1}}</view>
+
+<view class="conts">
+	<textarea class="areas" placeholder='请填写10个字以上的问题描述以便我们提供更好的帮助' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+        <text class="currentWordNumber">{{texts}}</text>
+    </textarea>
+</view>
+
+<view class="sub3">
+
+	<view class="weui-uploader__title">截图
+		<view class="weui-uploader__info">({{pics.length}}/{{count[countIndex]}})</view>
+	</view>
+
+	<view class="contant-pic">
+
+		<view class="pics-list" wx:for="{{pics}}" wx:key="">
+			<image src="{{item}}" class="uploadImg"></image>
+			<image src="../../images/tianja.png" class="uploadImg-error" data-img="{{item}}" bindtap='deleteImg'></image>
+		</view>
+
+		<image src="../../images/tianja.png" class="uploadImg {{isShow?'true':'hideTrue'}}" bindtap='uploadImage'></image>
+	</view>
+
+</view>
+
+<view class="sub4">
+	<text class="text">联系方法</text>
+	<input class="input" placeholder="邮箱/手机号" />
+</view>
+
+<view class="sub5">
+	<radio />
+	<text class="xz">允许开发者在48小时内通过客服消息联系我
+  </text>
+</view>
+<button class="button" type="default" bindtap="showModal">提交</button>
+<view>
+	<modal title="反馈提交" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel"><text class="text">您的反馈已成功提交</text></modal>
+</view>

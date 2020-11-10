@@ -1,0 +1,15 @@
+		<view class="all">
+			<view class="head-nav">
+				<text class="date">历史记录</text>
+				
+				<image src="./../../images/清空.png" class="del" bindtap="del" data-index="{{index}}" />
+			</view>
+
+			<view class="content" wx:for="{{footprint}}" data-index="{{index}}"  wx:key>
+				<view class="content">
+						<image src="{{item.videoPic}}"></image>
+						<text class="title">{{item.videoUploadDate}}</text>
+						<text class="subtitle">{{item.videoPlayNum}}</text>
+				</view>
+			</view>
+		</view>

@@ -1,0 +1,43 @@
+<view class="header">
+	<text class="header-left">收藏</text>
+	
+</view>
+<view class="bigbox">
+
+	<checkbox-group bindchange="checkboxChange">
+		<label class="" wx:for="{{items}}">
+			<view class="labelbox">
+				<checkbox checked="{{checked}}" hidden="{{dxxs}}" value="{{index}}" />
+				<view class="Mvmsg">
+					<image src="{{item.videoPic}}"> </image>
+
+					<view class="Mvtxt">
+						<text class="Mvtxt-txt">番名：{{item.videoTitle}}</text>
+						<view>
+							<text>时间：{{item.videoUploadDate}}</text>
+							<text>播放量：{{item.videoPlayNum}}</text>
+						</view>
+					</view>
+
+				</view>
+			</view>
+		</label>
+	</checkbox-group>
+
+	<view class="qxk" hidden="{{scxs}}">
+		<label class="">
+			<checkbox checked="{{quanxuan}}" bindtap="quanxuan" />全选
+		</label>
+		<view>
+			<text bindtap="bianji">取消</text>
+			<text bindtap="shanchu" >删除</text>
+		</view>
+	</view>
+
+	<view class="bj" hidden="{{bjxs}}">
+		<text bindtap="bianji">编辑</text>
+
+	</view>
+
+</view>
+<image class="bgtp" src="../../images/ic_movie_pay_order_error.png" hidden="{{tp}}"></image>

@@ -1,0 +1,12 @@
+<!--pages/mine/mine.wxml-->
+<navigator url="/pages/sousuo/sousuo" class="search">
+<label>搜索内容 <icon size='20' type='search'></icon></label>
+</navigator>
+ <view wx:for="{{datalist}}" class="max_box">
+ <navigator url="/pages/video/video?id={{item.videoId}}">
+    <view class="min_box">
+      <image src="{{item.videoPic}}"></image>
+      <text>{{item.videoTitle}}</text>
+    </view>
+    </navigator>
+ </view>

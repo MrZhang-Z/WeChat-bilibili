@@ -1,0 +1,132 @@
+<view>
+	<view class="comture">
+		<image class="avatar" src='{{userInfo.avatarUrl}}' bindtap="goTodenglu"></image>
+		<view class="nickname">{{userInfo.nickName}}</view>
+	</view>
+	<view class="comture-right" bindtap="gotokongjian">
+		<text>空间</text>
+		<image src="../../images/右标.png"></image>
+	</view>
+</view>
+
+<view class="header-nav1">
+	<view class="nav1-dong">
+		<text>0</text>
+		<view></view>
+		<text class="nav1-text">动态</text>
+	</view>
+	<view class="nav1-dong">
+		<text>0</text>
+		<view></view>
+		<text class="nav1-text">关注</text>
+	</view>
+	<view class="nav1-dong1">
+		<text>3</text>
+		<view></view>
+		<text class="nav1-text">粉丝</text>
+	</view>
+</view>
+
+<view class="nav2-huiyuan">
+	<view class="huiyuan">
+		<text class="huiyuan-text">我的大会员</text>
+		<view></view>
+		<text class="huiyuan-text2">了解更多会员</text>
+		<image src="../../images/右标.png"></image>
+	</view>
+</view>
+
+<view class="center">
+	<view class="center-hc">
+		<icon class="iconfont icon-huancun"></icon>
+		<text>离线缓存</text>
+	</view>
+	<view bindtap="gotohistroy" class="center-hc">
+		<icon class="iconfont icon-lishijilu"></icon>
+		<text>历史记录</text>
+	</view>
+	<view class="center-hc" bindtap="gotohistry">
+		<icon class="iconfont icon-shoucang"></icon>
+		<text>我的收藏</text>
+	</view>
+	<view class="center-hc">
+		<icon class="iconfont icon-weibiaoti--"></icon>
+		<text>稍后在看</text>
+	</view>
+</view>
+
+
+
+<view class="center-tuijian">
+	<text>推荐服务</text>
+</view>
+
+
+<view class="center-tubiao">
+	<view class="tubiao-star">
+		<icon class="iconfont icon-kecheng"></icon>
+		<text>我的课程</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-mianliuliangchangting_52"></icon>
+		<text>免流量服务</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-gexingzhuangban"></icon>
+		<text>个性装扮</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-red-packet_icon"></icon>
+		<text>邀好友赚红包</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-youxizhongxinx"></icon>
+		<text>游戏中心</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-wodeqianbao"></icon>
+		<text>我的钱包</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-gouwuzhongxin"></icon>
+		<text>会员购物中心</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-zhibozhongxin"></icon>
+		<text>直播中心</text>
+	</view>
+	<view class="tubiao-star" bindtap="gotofeedback">
+		<icon class="iconfont icon-luntan"></icon>
+		<text>反馈论坛</text>
+	</view>
+	<view class="tubiao-star">
+		<icon class="iconfont icon-leyuan"></icon>
+		<text>乐园</text>
+	</view>
+</view>
+<view class="center-tuijian">
+	<text>更多服务</text>
+</view>
+
+<view class="center-genduo">
+	<view class="gengduo-end">
+		<icon class="iconfont icon-lianxikefu"></icon>
+		<text>联系客服</text>
+    <image class="gengduo-img" src="../../images/右标.png"></image>
+	</view>
+  	<view class="gengduo-end">
+		<icon class="iconfont icon-ketang"></icon>
+		<text>课堂模式</text>
+    <image class="gengduo-img" src="../../images/右标.png"></image>
+	</view>
+  	<view class="gengduo-end">
+		<icon class="iconfont icon-yusan"></icon>
+		<text>青少年模式</text>
+    <image class="gengduo-img" src="../../images/右标.png"></image>
+	</view>
+  	<view class="gengduo-end">
+		<icon class="iconfont icon-shezhi-copy"></icon>
+		<text>设置</text>
+    <image class="gengduo-img" src="../../images/右标.png"></image>
+	</view>
+</view>

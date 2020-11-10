@@ -1,0 +1,11 @@
+<view class="header">
+    <text>请选择反馈内容</text>
+    <text class="fanhui" bindtap="gotowode">返回</text>
+</view>
+<view class="body">
+
+    <view class="txt" wx:for="{{feekback}}" bindtap="submitgo" data-txt1='无法打开小程序'>
+      <view class="txt1" > {{item.txt1}}</view>
+      <image src="../../images/右标.png"></image>
+    </view>
+</view>

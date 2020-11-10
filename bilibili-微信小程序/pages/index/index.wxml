@@ -1,0 +1,235 @@
+<!-- 头 -->
+<view class="head">
+	<!-- 头像 -->
+	<view class="avatar">
+		 <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+	</view>
+	<!-- 搜索框 -->
+	<view class="search" bindtap="goSearch">
+		<image src="../../images/search.png"></image>
+	</view>
+</view>
+
+<!-- 导航栏 -->
+<view class="navigation">
+	<movable-area class="navigation_mov_area">
+		<movable-view class="navigation_mov_view" direction="horizontal" inertia="true">
+			<view class="swiper-tab">
+				<view class="swiper-tab-item {{ currentTab == 0 ? 'active':''}}" data-current='0' bindtap="clickTab">推荐</view>
+				<view class="swiper-tab-item {{ currentTab == 1 ? 'active':''}}" data-current='1' bindtap="clickTab">热门</view>
+				<view class="swiper-tab-item {{ currentTab == 2 ? 'active':''}}" data-current='2' bindtap="clickTab">追番</view>
+				<view class="swiper-tab-item {{ currentTab == 3 ? 'active':''}}" data-current='3' bindtap="clickTab">影视</view>
+			</view>
+		</movable-view>
+	</movable-area>
+</view>
+
+<!-- 内容 -->
+<swiper class="swiper" current="{{ currentTab }}" bindchange="swiperTab">
+	<!-- 推荐内容 -->
+	<swiper-item>
+		<!-- 可滚动视图区域 -->
+		<scroll-view class="scroll" scroll-y="true" bindscrolltolower="shuaxin">
+			<view class="banner">
+				<swiper autoplay='ture' indicator-color='white' indicator-dots='true' interval='2000' style="height: 100%">
+					<swiper-item class="swiper-item" wx:for="{{bannerList}}" wx:for-item="content">
+						<image src='{{content.src}}'></image>
+						<view>
+							<text>{{content.title}}</text>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="recommend">
+				<view class="recommend_content" wx:for="{{ recommendList }}" wx:for-item="content" bindtap="goPlay" data-id="{{ content.videoId }}" wx:if="{{index<50}}">
+					<image src=" {{ content.videoPic }}"></image>
+					<text>{{ content.videoTitle }}</text>
+					<!-- 播放量 -->
+					<view class="play_volume">
+						<image src="../../images/bofangliang.png"></image>
+						<text wx:if="{{ content.videoPlayNum >= 10000 }}">{{ content.videoPlayNum/10000 }}w</text>
+						<text wx:else="{{ content.videoPlayNum <10000 }}">{{ content.videoPlayNum }}</text>
+					
+					</view>
+					<!-- 视频类型 -->
+					<view class="shipinleixing">{{ content.videoLabel }}</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+
+	<!-- 热门内容 -->
+	<swiper-item>
+		<scroll-view class="scroll" scroll-y="true">
+			<view class="popular">
+				<view class="popular_content" wx:for="{{ popularList }}" wx:for-item="content" bindtap="goPlay"  wx:if="{{index<50}}" data-id="{{ content.videoId }}">
+					<view>
+						<image src="{{ content.videoPic }}"></image>
+					</view>
+					<view>
+						<text>{{ content.videoTitle}}</text>
+						<view class="auther">
+							<image src="../../images/up.png"></image>
+							<text>{{ content.name}}</text>
+						</view>
+						<view class="play-volume">
+							<image src="../../images/bofangliang1.png"></image>
+							<text wx:if="{{ content.videoPlayNum >= 10000 }}">{{ content.videoPlayNum/10000 }}w观看</text>
+							<text wx:else="{{ content.videoPlayNum <10000 }}">{{ content.videoPlayNum }}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+
+	<!-- 追番内容 -->
+	<swiper-item>
+		<scroll-view class="scroll" scroll-y="true">
+			<view class="banner">
+				<swiper autoplay='ture' indicator-color='white' indicator-dots='true' interval='2000' style="height: 100%">
+					<swiper-item class="swiper-item" wx:for="{{bannerList}}" wx:for-item="content">
+						<image src='{{content.src}}'></image>
+						<view>
+							<text>{{content.title}}</text>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="chase_drama">
+				<view class="chase_drama_content">
+					<!-- 标签 -->
+					<view class="chase_drama_label">
+						<view bindtap="goFenquFanju">
+							<image src="../../images/fanju.png"></image>
+							<text>番剧</text>
+						</view>
+						<view bindtap="goFenquGuochuang">
+							<image src="../../images/guochuang.png"></image>
+							<text>国创</text>
+						</view>
+						<view bindtap="goFenquDonghua">
+							<image src="../../images/donghua.png"></image>
+							<text>动画</text>
+						</view>
+						<view bindtap="goFenquYinyue">
+							<image src="../../images/yinyue.png"></image>
+							<text>音乐</text>
+						</view>
+					</view>
+
+					<!-- 我的追番 -->
+					<view class="chase_drama_mine">
+						<text class="title">我的追番</text>
+						<movable-area class="chase_drama_mine_mov_area">
+							<movable-view class="chase_drama_mine_mov_view" direction="horizontal" catchtouchmove="preventD">
+								<view class="a" wx:for="{{ chase_drama_mineList }}" wx:for-item="content" data-id="{{ content.videoId }}" bindtap="goPlay" wx:if="{{ index<5 }}">
+									<view class="chase_drama_mine_content">
+										<image src="{{ content.videoPic }}"></image>
+										<text class="film_television_title">{{ content.videoTitle }}</text>
+									</view>
+								</view>
+							</movable-view>
+						</movable-area>
+					</view>
+
+					<!-- 番剧推荐 -->
+					<view class="chase_drama_recommend">
+						<text class="title">番剧推荐</text>
+						<view class="chase_drama_recommend_content">
+							<view wx:for="{{ chase_drama_recommendList }}" wx:for-item="content"  bindtap="goPlay" data-id="{{ content.videoId }}" wx:if="{{index<6}}">
+								<image src="{{ content.videoPic }}"></image>
+								<text class="film_television_title">{{ content.videoTitle }}</text>
+							</view>
+						</view>
+					</view>
+
+					<!-- 国创推荐 -->
+					<view class="chase_drama_recommend">
+						<text class="title">国创推荐</text>
+						<view class="chase_drama_recommend_content">
+							<view wx:for="{{ chase_drama_domesticList }}" wx:for-item="content" bindtap="goPlay" data-id="{{ content.videoId }}" wx:if="{{index<6}}">
+								<image src="{{ content.videoPic }}"></image>
+								<text class="film_television_title">{{ content.videoTitle }}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+
+	<!-- 影视内容 -->
+	<swiper-item>
+		<scroll-view class="scroll" scroll-y="true">
+			<view class="banner">
+				<swiper autoplay='ture' indicator-color='white' indicator-dots='true' interval='2000' style="height: 100%">
+					<swiper-item class="swiper-item" wx:for="{{bannerList}}" wx:for-item="content">
+						<image src='{{content.src}}'></image>
+						<view>
+							<text>{{content.title}}</text>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="film_television">
+				<view class="film_television_content">
+					<!-- 标签 -->
+					<view class="chase_drama_label">
+						<view bindtap="goFenquDianying">
+							<image src="../../images/dianying.png"></image>
+							<text>电影</text>
+						</view>
+						<view bindtap="goFenquDianshiju">
+							<image src="../../images/dianshiju.png"></image>
+							<text>电视剧</text>
+						</view>
+						<view bindtap="goFenquGuichu">
+							<image src="../../images/xiaoshipin.png"></image>
+							<text>鬼畜</text>
+						</view>
+						<view bindtap="goFenquYule">
+							<image src="../../images/yule.png"></image>
+							<text>娱乐</text>
+						</view>
+					</view>
+
+					<!-- 电影热播 -->
+					<view class="film_television_hits">
+						<text class="title">电影热播</text>
+						<view class="film_television_hits_content">
+							<view wx:for="{{ movieList }}" wx:for-item="content" bindtap="goPlay" data-id="{{ content.videoId }}" wx:if="{{index<6}}">
+								<image src="{{ content.videoPic }}"></image>
+								<text class="film_television_title">{{ content.videoTitle }}</text>
+								<text class="film_television_text">{{ content.introduction }}</text>
+							</view>
+						</view>
+					</view>
+
+					<!-- 纪录片热播 -->
+					<view class="film_television_hits">
+						<text class="title">纪录片热播</text>
+						<view class="film_television_hits_content">
+							<view wx:for="{{ documentaryList }}" wx:for-item="content" data-id="{{ content.videoId }}" bindtap="goPlay" wx:if="{{index<6}}">
+								<image src="{{ content.videoPic }}"></image>
+								<text class="film_television_title">{{ content.videoTitle }}</text>
+								<text class="film_television_text">{{ content.introduction }}</text>
+							</view>
+						</view>
+					</view>
+
+					<!-- 影视推荐 -->
+					<view class="film_television_hits">
+						<text class="title">影视推荐</text>
+						<view class="film_television_hits_content">
+							<view wx:for="{{ film_television_recommendList }}" wx:for-item="content" bindtap="goPlay" data-id="{{ content.videoId }}" wx:if="{{index<6}}">
+								<image src="{{ content.videoPic }}"></image>
+								<text class="film_television_title">{{ content.videoTitle }}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+</swiper>

@@ -1,0 +1,173 @@
+<view class="paly">
+	<view class="nav-bar">
+		<view class="nav-wrp">
+			<!-- LOGO -->
+			<navigator class="a logo">
+				<!-- <image src="../../resources/images/logo.png" ></image> -->
+			</navigator>
+			<!-- 观看历史 -->
+			<navigator class="a cell">
+				<view class="nav-icon bili-icon-history">
+					<image src="../images/lishi.png"></image>
+				</view>
+			</navigator>
+			<!-- 搜索框 -->
+			<view class="nav-bar cell-search">
+				<input type="search" bindtap="search" placeholder="热门番剧">
+				</input>
+			</view>
+		</view>
+	</view>
+	<view class="player-container">
+		<view class="player-box">
+			<video bindtimeupdate="powerDrawer" id="myVideo" style="height:{{videoHeight}}px;width:{{videoWidth}}px" src="{{usrc}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+		</view>
+	</view>
+	<!--简介--评论-->
+	<view class="videoPage">
+		<button class="videoshare1 {{currentTab == 0 ? 'active': ''}}" data-current='0' bindtap="onMessage">
+			简介</button>
+		<button class="videoshare2 {{currentTab == 1 ? 'active': ''}}" data-current='1' bindtap="comment">
+			评论{{shuliang}}</button>
+		<view class="videoshare3" style=" color: {{textcolor}};">{{typess}}</view>
+	
+		<view class="videoDanmu">
+			<!--弹幕-->
+			<view class="danmu">
+				<view class="danmuinput" style="background:rgb(240, 240, 240);">
+					<view bindtap="powerDrawer" data-statu="open">{{danmugo}}</view>
+
+				</view>
+				<view class="senddanmu">
+					<view class="btn" bindtap="powerDrawer" data-statu="open"><image src="../images/fasong.png"></image></view>
+					<!--mask-->
+					<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+					<!--content-->
+					<!--使用animation属性指定需要执行的动画-->
+					<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+						<!--drawer content-->
+						<view class="drawer_content">
+							<view class="drawer_title line">
+								<view class="btn-area">
+									<view class="weui-cell weui-cell_input">
+										<view class="weui-cell__bd">
+											<input class="weui-input" placeholder="请输入弹幕" bindblur="bindInputBlur" />
+										</view>
+									</view>
+									<button type="primary" style="margin:30rpx 150rpx; background:#EA6CAF;" bindtap="bindSendDanmu">发送弹幕</button>
+								</view>
+							</view>
+
+							<view class="weui-cells weui-cells_after-title">
+								<view class="weui-cell weui-cell_switch" >
+									<view class="weui-cell__bd" >随机颜色</view>
+									<view class="weui-cell__ft">
+										<switch checked bindchange="switchChange" color="#EA6CAF" />
+									</view>
+								</view>
+								<view class="colorstyle" bindtap="selectColor">
+									<text>选择颜色</text>
+									<view style="height:80rpx;width:80rpx;line-height: 100rpx;margin:10rpx;background-color:{{numberColor}}"></view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!--切换简介内容与评论内容-->
+</view>
+
+	<swiper class="open_colse" duration="300" current="{{currentTab}}" bindchange='swiperTab'>
+
+		<swiper-item style="overflow: scroll;">
+			<view class="jian_title">
+				<view class="title">{{title}}</view>
+				<view class="gofan" hidden="{{ZF}}" bindtap="zhuifan">
+					<image src="{{zhuifanimg}}"></image><text>{{zhuifan}}</text>
+				</view>
+				<view class="stime" hidden="{{TM}}">上传时间：{{shangchuantime}}</view>
+			</view>
+			<!--相关播放数据与详情-->
+			<view class="num_x">
+				<view class="samll">{{bofang}}播放</view>
+				<view class="samll" hidden="{{BF}}">{{gofan}}追番</view>
+				<view class="samll" hidden="{{DM}}">{{danmuListnum}}弹幕</view>
+				<view class="img_view">
+					<text bindtap="xiangqin">详情</text>
+					<image bindtap="xiangqin" src="../images/more.png"></image>
+				</view>
+			</view>
+			<view class="jianjie_text" hidden="{{tab}}">
+				<text>{{jianjie}}</text>
+			</view>
+
+			<!--投币 收藏 分享-->
+			<view class="about_logo">
+				<view class="f_logo" bindtap="sanlian">
+					<image src="{{toubimg}}"></image>
+					<text>{{toubi}}</text>
+				</view>
+				<view class="f_logo" style="opacity: 0.4;">
+					<image src="../images/download.png" ></image>
+					<text>版权受限</text>
+				</view>
+				<view class="f_logo" bindtap="shouchang">
+					<image src="{{ssrc}}" ></image>
+					<text >{{shouchang}}</text>
+				</view>
+				<view class="f_logo">
+					<image style="opacity: 0.5;" src="../images/shares.png"></image>
+					<text>{{share}}</text>
+				</view>
+			</view>
+			<button style="width: 100rpx;" class="btnshare" open-type="share" bindtap="onShareAppMessage"></button>
+			<!--更多推荐-->
+			<view class="about_more">更多推荐</view>
+			<view class="" wx:for='{{videoList}}' >
+				<view class="about_box">
+					<image src="{{item.imgsrc}}"></image>
+					<view class="about_right">
+						<view class="titleName">{{item.videotitle}}</view>
+						<view class="numscore">{{item.videoscore}}</view>
+						<view class="gonumber">{{item.videonumber}}</view>
+						<view class="bofannum"><image src="../images/bfs.png"></image>{{item.bofanglist}}</view>
+						<view class="zhuifannum"><image src="../images/loveT.png"></image>{{item.shouchanglist}}</view>
+					</view>
+				</view>
+			</view>
+			<view style="color: #858383; font-size: 35rpx; text-align: center">已经到底啦！！</view>
+		</swiper-item>
+			
+		<!-- 评论相关信息用户点赞-->
+		<swiper-item style="overflow: scroll;">
+		
+		<view class="hot">
+			<view class="hot_title">热门评论</view>
+			<view class="paixu_list" bindtap="paixuTime"><image src="../images/zhuifan.png"></image>{{PinLunPaihang}}</view>
+		</view>
+	<scroll-view scroll-y='true' bindscrolltolower="jiazai" style="height:{{height}}rpx">
+		<view class="disscus" wx:for="{{userxinxi}}" >
+			<view class="header-top">
+				<view class="touImg"><image src="{{item.userPic}}"></image></view>
+				<view class="name_time">
+					<view class="names">{{item.userName}}</view>
+					<view class="times">{{item.videoCommentDate}}</view>
+				</view>
+				<view class="guanzhu"  data-index3="{{index}}" bindtap="userguanzu">{{item.userfocus}}</view>
+			</view>
+			<view class="disscus_bottom">{{item.videoCommentText}}</view>
+			<view class="disscus_logo" >
+				<image src="{{item.userzan}}"  data-index="{{index}}" bindtap="dianzan"></image>
+				<text style="{{item.zancolor}}">{{item.videoCommentGoodNum}}</text>
+				<image src="{{item.userbuzan}}"  data-index2="{{index}}" bindtap="buzan" style="padding-left: 25rpx;"></image>
+				<image src="../images/share_disscus.png" style="padding-left: 25rpx;"></image>
+				<image src="../images/mesaages.png" style="padding-left: 25rpx;"></image>
+			</view>
+		</view>
+	
+			<view style="color: #858383; font-size: 35rpx; text-align: center">小程序暂不支持用户评论</view>
+			</scroll-view>
+		</swiper-item>
+	</swiper>

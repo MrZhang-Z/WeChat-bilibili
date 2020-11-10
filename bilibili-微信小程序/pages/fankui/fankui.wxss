@@ -1,0 +1,35 @@
+.header{
+  width: 100%;
+  height: 80rpx;
+
+}
+.header text{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+}
+.header .fanhui{
+  font-size: 30rpx;
+  color:#fb86b3 ;
+  float: right;
+  margin-right: 60rpx;
+  margin-top: 10rpx;
+}
+.txt{
+  width: 90%;
+  height: 60rpx;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  line-height: 55rpx;
+}
+.txt image{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-right: 40rpx;
+  margin-top: -40rpx;
+}
+.txt1{
+  font-size: 30rpx;
+  font-weight: bold;
+}

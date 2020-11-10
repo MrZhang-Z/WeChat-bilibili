@@ -1,0 +1,232 @@
+.comture{
+  width: 60%;
+  height: 180rpx;
+  
+  display: flex;
+}
+.avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.nickname{
+  font-size: 30rpx;
+  color: gray;
+  margin-top: 60rpx;
+  width: 160rpx;
+  margin-left: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap ;
+}
+.comture-right{
+  width: 20%;
+  height: 40rpx;
+  margin-top: -120rpx;
+  float: right;
+}
+.comture-right image{
+  width: 30rpx;
+  height: 30rpx;
+  padding-top: 10rpx;
+}
+.comture-right text{
+  font-size: 30rpx;
+  color: gray;
+  
+}
+@import'../../images/css/iconfont.wxss';
+
+.nav-head {
+  width: 200rpx;
+  height: 300rpx;
+  flex-direction: column;
+}
+
+.nav-head .nav-img1 {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-top: 25rpx;
+  margin-left:300rpx;
+  position: relative;
+}
+
+.nav-head button {
+  width: 40rpx;
+  height: 80rpx;
+  background-color: #f98eb7;
+  position: absolute;
+}
+
+
+
+.header-nav1 {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.nav1-dong {
+
+  width: 30%;
+  height: 100rpx;
+  text-align: center;
+  border-right: 1px solid #e6e1e1;
+}
+
+.nav1-dong1 {
+
+  width: 30%;
+  height: 100rpx;
+  text-align: center;
+}
+
+.nav1-text {
+  font-size: 35rpx;
+  color: gray;
+}
+
+.nav2-huiyuan {
+  width: 100%;
+  height: 160rpx;
+  border: 1px solid rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgb(252, 230, 235), 20%, #ffffff);
+}
+
+.huiyuan {
+  width: 90%;
+  height: 140rpx;
+  border: 2rpx solid rgb(235, 192, 204);
+  background-color: rgb(254, 240, 240);
+  margin-top: 20rpx;
+  margin-left: 35rpx;
+  border-radius: 15rpx 15rpx 0rpx 0rpx;
+  border-bottom: rgb(252, 230, 235);
+}
+
+.huiyuan image {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+
+.huiyuan-text {
+  margin-left: 30rpx;
+  color: rgb(253, 112, 156);
+  font-weight: bold;
+}
+
+.huiyuan-text2 {
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  color: rgb(214, 155, 173);
+}
+
+.center {
+  width: 100%;
+  height: 120rpx;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.center icon {
+  
+  color: #7dc5eb;
+  padding-left: 60rpx;
+}
+
+.center-hc {
+  width: 22%;
+  height: 120px;
+}
+
+.center-hc text {
+  font-size: 25rpx;
+  text-align: center;
+  display: block;
+  padding-top: 10rpx;
+
+}
+
+.center-tuijian {
+  width: 100%;
+  height: 40rpx;
+
+}
+
+.center-tuijian text {
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+}
+
+.center-tubiao {
+  width: 100%;
+  height: 380rpx;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.tubiao-star {
+  width: 22%;
+  height: 40px;
+  margin-left: 15rpx;
+  margin-top: 25rpx;
+}
+
+.tubiao-star icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 50rpx;
+  color: #fb86b3;
+}
+
+.tubiao-star text {
+  font-size: 25rpx;
+  display: block;
+  text-align: center;
+  padding-top: 10rpx;
+}
+
+.center-genduo {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+}
+.gengduo-end{
+  width: 100%;
+  height: 30px;
+  margin-top: 30rpx;
+}
+.gengduo-end .gengduo-img{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-right: 40rpx;
+}
+.gengduo-end image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 40rpx;
+}
+
+.gengduo-end text {
+  font-size: 25rpx;
+  text-align: center;
+  position: relative;
+  top: -20rpx;
+  left: 20rpx;
+}
+.gengduo-end icon{
+  color:#fb86b3;
+  margin-left: 40rpx;
+}

@@ -1,0 +1,149 @@
+
+
+checkbox{
+  margin: 30rpx 10rpx 30rpx 30rpx;
+  color:white;
+}
+
+
+  checkbox .wx-checkbox-input{
+    border-radius: 50%;/* 圆角 */
+    border: 1rpx solid #aaa; /* 边框颜色*/
+ }
+ /* 选中后的--样式更改 */
+ checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+    border: none;/*无边框*/
+    background-color: #FB7299;/*背景色红色*/
+ }
+ /* 选中后的--对勾的样式更改 （可根据自己需求修改） */
+ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+    height: 45rpx;
+    width: 45rpx;
+    line-height: 45rpx;
+    border-radius: 50%;/* 圆角 */
+    text-align: center;/* 文字居中显示*/
+    font-size:35rpx; /* 对勾大小 30rpx */
+    color:#fff; /* 对勾颜色 白色 */
+
+ }
+
+checkbox-group{
+  margin-bottom: 190rpx;
+}
+
+.bgtp{
+  position: absolute;
+  top: 20%;
+  left:20% ;
+  right:20%;
+  width: 60%;
+  height: 45%;
+}
+.header{
+  width: 100%;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+.header .header-left{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.header .header-right{
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  float: right;
+  color: #FB7299;
+  margin-right: 40rpx;
+}
+
+
+
+
+
+
+
+.labelbox{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+}
+.Mvmsg{
+  height:200rpx;
+   width: 100%;
+  
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.Mvmsg image{
+  width: 38%;
+  height: 86%;
+
+  float: left;
+  border-radius: 15rpx;
+  margin-right: 15rpx;
+
+}
+.Mvtxt{
+  height: 86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.Mvtxt .Mvtxt-txt{
+  font-size: 30rpx;
+  font-weight: bold;
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Mvtxt view{
+  display: flex;
+  flex-direction: column;
+  color: rgb(128, 126, 126);
+  font-size: 25rpx;
+}
+
+.qxk{
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 190rpx;
+  position: fixed;
+  bottom: 0;
+  padding-left: 15rpx;
+  padding-right:15rpx ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid gainsboro;
+  background-color: white;
+  width: 96%;
+  margin: auto;
+}
+.qxk view{
+   width: 35%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.bj{
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 190rpx;
+  position: fixed;
+  bottom: 0;
+  padding-left: 15rpx;
+  padding-right:15rpx ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid gainsboro;
+  background-color: white;
+  width: 96%;
+  margin: auto;
+}

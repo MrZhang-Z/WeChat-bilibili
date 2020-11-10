@@ -1,0 +1,519 @@
+page {
+  /* width: 100%; */
+  height: 100%;
+}
+text{
+  letter-spacing: 3rpx; /* 字间距 */
+}
+
+
+/* 头 */
+.head {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 头像 */
+.avatar {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  margin-top: 5rpx;
+}
+
+.avatar>image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+/* 搜索框 */
+.search {
+  width: 550rpx;
+  height: 50rpx;
+  border-radius: 40rpx;
+  margin-top: 25rpx;
+  background-color: #f2f2f2;
+}
+
+.search>image {
+  width: 25rpx;
+  height: 25rpx;
+  margin: 15rpx 0 0 20rpx;
+}
+
+.search>input {
+  width: 400rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 5rpx;
+  margin-right: 70rpx;
+  font-size: 25rpx;
+}
+
+/* 导航 */
+.navigation {
+  position: none;
+  height: 70rpx;
+  z-index: 3;
+}
+
+.navigation_mov_area {
+  width: 100%;
+  height: 50rpx;
+}
+
+.navigation_mov_view {
+  width: 750rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0px;
+}
+
+/* 导航滑块 */
+.swiper-tab {
+  width: 150%;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row;
+  line-height: 70rpx;
+}
+
+.swiper-tab-item {
+  /* width: 150rpx; */
+  text-align: center;
+  font-size: 14px;
+}
+
+.active {
+  color: rgb(251, 114, 153);
+  border-bottom: 5rpx solid rgb(251, 114, 153);
+}
+
+.swiper {
+  height: 86.5%;
+  width: 100%;
+}
+
+/* 内容 */
+.scroll {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 广告 */
+.banner {
+  width: 96%;
+  height: 350rpx;
+  margin: auto;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  position: relative;
+  z-index: 0;
+}
+
+.swiper-item>image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  z-index: -1;
+  position: absolute;
+}
+
+/* 广告名称 */
+.swiper-item>view {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 10rpx;
+}
+
+.swiper-item>view>text {
+  z-index: 1;
+  position: absolute;
+  top: 300rpx;
+  color: #FFFFFF;
+  font-size: 14px;
+  left: 30rpx;
+  letter-spacing: 5rpx; /* 字间距 */
+}
+
+/* 提示点位置 */
+.wx-swiper-dots {
+  position: relative;
+  left: unset !important;
+  right: 0;
+}
+
+/* 推荐 */
+.recommend {
+  width: 96%;
+  display: flex;
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.recommend_content {
+  width: 350rpx;
+  height: 350rpx;
+  margin: 20rpx 0 20rpx 0;
+  border-radius: 10rpx;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.recommend_content>image {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 10rpx 10rpx 0 0;
+}
+
+.recommend_content>text {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  display: -webkit-box;
+  color: #000000;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 20rpx 0 20rpx;
+}
+
+/* 播放量 */
+.play_volume{
+  width: 100%;
+  height: 30rpx;
+  position: absolute;
+  top: 170rpx;  
+  background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3));
+}
+.play_volume>image{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-left: 30rpx
+}
+.play_volume>text{
+  font-size: 12px;
+  color: #FFFFFF;
+  height: 30rpx;
+  display: block;
+  float: left;
+  margin-left: 30rpx;
+}
+
+/* 视频类型 */
+.shipinleixing{
+  width: 80%;
+  height: 40rpx;
+  font-size: 12px;
+  color: #9c9c9c;
+  line-height: 40rpx;
+  margin: 10rpx 0 0 20rpx;
+  position: absolute;
+  bottom: 10rpx;
+}
+
+/* 热门 */
+.popular {
+  width: 96%;
+  margin: auto;
+}
+
+.popular_content {
+  width: 100%;
+  height: 220rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.popular_content>view {
+  width: 350rpx;
+  height: 200rpx;
+  margin-top: 10rpx;
+}
+
+.popular_content>view>image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.popular_content>view>text:nth-child(1) {
+  margin: 0;
+  padding: 0;
+  font-size: 28rpx;
+  display: -webkit-box;
+  color: #000000;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.auther{
+  width: 100%;
+  height: 50rpx;
+  margin: 25rpx 0 0 0;
+}
+
+.auther>image{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin: 5rpx 20rpx 0 0;
+}
+.auther>text{
+  font-size: 25rpx;
+  color: #707070;
+  display: -webkit-box;
+  float: left;
+  line-height: 50rpx;
+}
+
+.play-volume{
+  width: 100%;
+  height: 50rpx;
+}
+
+.play-volume>image{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin: 5rpx 20rpx 0 0;
+}
+.play-volume>text{
+  font-size: 23rpx;
+  color: #707070;
+  display: -webkit-box;
+  float: left;
+  line-height: 50rpx;
+}
+
+/* 追番 */
+.chase_drama {
+  width: 96%;
+  display: flex;
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.chase_drama_content {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+/* 我的追番标签 */
+.chase_drama_label {
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  justify-content: space-around;
+  margin: 15rpx 0 15rpx 0;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.chase_drama_label>view {
+  width: 100rpx;
+  height: 120rpx;
+}
+
+.chase_drama_label>view>image {
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  margin: auto;
+}
+
+.chase_drama_label>view>text {
+  margin: auto;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  margin-top: 5rpx;
+}
+
+/* 我的追番 */
+.chase_drama_mine{
+  width: 100%;
+  height: 270rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.chase_drama_mine_mov_area{
+  width: 100%;
+  height: 200rpx;
+}
+
+.chase_drama_mine_mov_view{
+  width: 1210rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.a{
+  width: 227rpx;
+  height: 200rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.chase_drama_mine_content{
+  width: 225rpx;
+  height: 200rpx;
+}
+
+.chase_drama_mine_content>image{
+  width: 100%;
+  height: 70%;
+  border-radius: 15rpx;
+}
+
+/* 页面小板块名 */
+.title{
+  font-size: 16px;
+  display: -webkit-box;
+  color: #000000;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20rpx;
+}
+
+/* 推荐  热门标题 */
+.content_title{
+  font-size: 14px;
+  color: #000000;
+}
+
+.a:last-child{
+  margin: 0;
+}
+
+/* 番剧推荐   国创推荐 */
+.chase_drama_recommend{
+  width: 100%;
+  height: 100%;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin-bottom: 20rpx;
+}
+
+.chase_drama_recommend_content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.chase_drama_recommend_content>view{
+  width: 350rpx;
+  height: 300rpx;
+  margin-bottom: 20rpx;
+}
+
+.chase_drama_recommend_content>view>image{
+  width: 100%;
+  height: 200rpx;
+  border-radius: 15rpx;
+}
+
+
+/* 影视 */
+.film_television{
+  width: 96%;
+  display: flex;
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.film_television_content{
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+/* 影视标题 */
+.film_television_title{
+  font-size: 14px;
+  display: -webkit-box;
+  color: #000000;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film_television_text{
+  font-size: 12px;
+  display: -webkit-box;
+  color: #bebebe;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 电影热播     纪录片热播    影视推荐*/
+.film_television_hits{
+  width: 100%;
+  height: 100%;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin-bottom: 20rpx;
+}
+
+.film_television_hits_content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.film_television_hits_content>view{
+  width: 230rpx;
+  height: 430rpx;
+  margin-bottom: 20rpx;
+}
+
+.film_television_hits_content>view>image{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 15rpx;
+}
+
+
+

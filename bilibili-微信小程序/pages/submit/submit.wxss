@@ -1,0 +1,118 @@
+
+.sub1{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+  width: 80%;
+  height: 60rpx;
+  border-bottom: 1rpx solid gainsboro;
+  margin-top: 30rpx;
+  margin:auto;
+}
+.conts{
+  width: 80%;
+  height: 220rpx;
+  border-bottom: 1rpx solid gainsboro;
+  margin-top: 30rpx;
+  margin:auto;
+}
+.areas{
+  height:152rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;   
+  position: relative; 
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  left: 480rpx;
+  top: 120rpx;
+  
+}
+.sub3{
+  width: 80%;
+  height: 250rpx;
+  border-bottom: 1rpx solid gainsboro;
+  margin-top: 30rpx;
+  margin:auto;
+}
+
+.contant-pic{
+  width: 94%;
+  margin: 0 auto;
+  height:70px;
+   
+ }
+ .pics-list{
+  width:73px;
+  height:73px;
+  float:left;
+  margin-right:6px;
+  margin-top: -20rpx;
+   
+ }
+ .weui-uploader__title{
+   display: flex;
+   flex-direction: row;
+ }
+
+ .weui-uploader__info{
+  margin-left: 20rpx;
+  color: gainsboro;
+
+ }
+
+
+ .uploadImg{
+  margin-top: 20rpx;
+  width:73px;
+  height:73px;
+ }
+ .uploadImg-error{
+  height:25px;
+  width:25px;
+  position:relative;
+  top:-80px;
+  left:55px;
+ }
+ .hideTrue {
+  display: none
+ }
+ .true {
+  display: block
+ }
+.sub4{
+  width: 80%;
+  height: 100rpx;
+  border-bottom: 1rpx solid gainsboro;
+  margin-top: 30rpx;
+  margin:auto;
+  display: flex;  
+  flex-direction: row 
+}
+.text{
+  margin-top:5rpx;
+}
+.input{
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.sub5{
+  width: 70%;
+  margin:auto;
+  margin-top: 230rpx;
+}
+.xz{
+  font-size: 24rpx;
+  color: darkgrey;
+}
+.button{
+  margin-top: 30rpx;
+}
+.text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
